@@ -1,0 +1,32 @@
+name: echo_assistant
+description: Trợ lý nhắc việc riêng tư, chạy trên máy Android.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  drift: ^2.28.1
+  drift_flutter: ^0.2.4
+  flutter_local_notifications: ^19.5.0
+  flutter_timezone: ^5.1.1
+  timezone: ^0.10.1
+  speech_to_text: ^7.4.0
+  flutter_secure_storage: ^10.0.0
+  http: ^1.5.0
+  intl: ^0.20.2
+  uuid: ^4.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  drift_dev: ^2.28.1
+  build_runner: ^2.4.15
+
+flutter:
+  uses-material-design: true

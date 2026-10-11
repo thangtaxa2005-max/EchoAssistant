@@ -1,0 +1,24 @@
+EchoAssistant: thư ký bỏ túi dạng chat
+
+Bạn nhắn bằng chữ hoặc giọng nói, ví dụ “8h tối nay nhắc tớ học từ vựng 30p”. App tự hiểu, tạo lịch và nhắc đúng giờ bằng giọng như một người bạn, giục lại lần 2 nếu bạn lỡ quên.
+
+Về sau app thành thư ký thật: tóm tắt ngày mỗi sáng, nhớ những điều bạn kể, gợi ý việc hợp với mức năng lượng hiện tại.
+
+Ràng buộc: chi phí 0đ, không server riêng. Dữ liệu lưu SQLite trong máy, AI dùng gói miễn phí Gemini/Groq (người dùng tự nhập API key), nhắc bằng Local Notification.
+
+Stack giả định: Flutter, Android trước, Drift (SQLite), Riverpod.
+
+Task
+
+Giai đoạn	Việc cần làm
+P0. Khởi tạo	Tạo project, cài thư viện, dựng khung chat trống
+P1. Lõi	Schema SQLite, CRUD việc, UI chat, danh sách việc
+P2. Hiểu tiếng Việt	Rule parser (giờ, ngày, thời lượng, lặp); Gemini trả JSON, fallback Groq; hỏi lại khi thiếu giờ; sửa/dời/xóa qua “việc đó”; màn nhập API key; test 50 câu đạt ≥90%
+P3. Nhắc đáng tin	Notification đúng giờ, giục lần 2, nút Xong/Lùi 15p/Bỏ, dựng lại lịch khi khởi động lại máy, hướng dẫn tắt tối ưu pin, test máy thật
+P4. Giọng nói	Nút mic on-device vi-VN, cho sửa chữ trước khi gửi
+P5. Bản tin	Tóm tắt sáng, hỏi lại việc xong/dời buổi tối
+P6. Bộ nhớ	Lưu fact về người dùng, màn xem/sửa/xóa, chỉ gửi phần liên quan lên LLM
+P7. Năng lượng	Check-in 3 mức, gắn mức năng lượng cho việc, gợi ý giờ nên làm gì
+P8. Hoàn thiện	Đồng bộ lịch máy, sao lưu, xử lý lỗi, test end-to-end, đóng gói APK
+
+MVP = P0 đến P4. Chạy ổn rồi mới làm P5 trở đi.
